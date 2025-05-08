@@ -1,17 +1,18 @@
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import MacNotifierPlugin from '../src/index';
+const path = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const MacNotifierPlugin = require('../dist/index.js').default;
 
-export default {
+module.exports = {
   mode: 'development',
   entry: './index.js',
   output: {
     filename: 'bundle.js',
-    path: new URL('./dist', import.meta.url).pathname,
+    path: path.resolve(__dirname, 'dist'),
     clean: true
   },
   devServer: {
     static: {
-      directory: new URL('./dist', import.meta.url).pathname
+      directory: path.resolve(__dirname, 'dist')
     },
     compress: true,
     port: 3000,

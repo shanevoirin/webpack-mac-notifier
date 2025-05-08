@@ -55,7 +55,7 @@ class MacNotifierPlugin {
   }
 
   apply(compiler: webpack.Compiler): void {
-    compiler.hooks.done.tap('MacNotifierPlugin', stats => {
+    compiler.hooks.done.tap('MacNotifierPlugin', (stats: webpack.Stats) => {
       const currentTime = Date.now();
       // Skip notification if not enough time has passed since the last one
       if (currentTime - this.lastNotificationTime < this.options.debounceTime) {
@@ -94,7 +94,7 @@ class MacNotifierPlugin {
       if (soundOption) args.push('-sound', soundOption);
 
       try {
-        execFile(this.notifierPath, args, (error) => {
+        execFile(this.notifierPath, args, (error: Error | null) => {
           if (error) {
             console.log(`MacNotifierPlugin: error showing notification: ${error.message}`);
           }

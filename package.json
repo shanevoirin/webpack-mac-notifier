@@ -5,9 +5,11 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "cd test && webpack",
+    "test:watch": "cd test && webpack --watch"
   },
-  "type": "module",
+  "type": "commonjs",
   "keywords": [
     "webpack",
     "plugin",
@@ -28,7 +30,10 @@
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/webpack": "^5.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.8",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^6.0.1"
   },
   "repository": {
     "type": "git",
@@ -40,5 +45,11 @@
   "homepage": "https://github.com/shanevoirin/webpack-mac-notifier#readme",
   "dependencies": {
     "terminal-notifier": "^0.1.2"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ]
 }
