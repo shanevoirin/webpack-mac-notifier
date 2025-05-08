@@ -1,8 +1,9 @@
 {
-  "name": "@shanevoirin/webpack-mac-notifier",
+  "name": "@svoirin/webpack-mac-notifier",
   "version": "1.0.0",
   "description": "A Webpack plugin for macOS terminal notifications using terminal-notifier",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",

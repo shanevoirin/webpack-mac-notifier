@@ -106,4 +106,7 @@ class MacNotifierPlugin {
   }
 }
 
+// Export for CommonJS (Node.js require)
 export default MacNotifierPlugin;
+// Also export named for ESM
+export { MacNotifierPlugin };

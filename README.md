@@ -9,9 +9,9 @@
 First, install the plugin:
 
 ```bash
-npm install --save-dev @shanevoirin/webpack-mac-notifier
+npm install --save-dev @svoirin/webpack-mac-notifier
 # or
-pnpm add -D @shanevoirin/webpack-mac-notifier
+pnpm add -D @svoirin/webpack-mac-notifier
 ```
 
 Then make sure `terminal-notifier` is installed (required for macOS notifications):
@@ -26,9 +26,28 @@ brew install terminal-notifier
 
 Edit your `webpack.config.js` (or `.ts`) to include the plugin:
 
+### For CommonJS (webpack.config.js)
+
 ```js
-// webpack.config.js
-import MacNotifierPlugin from '@shanevoirin/webpack-mac-notifier';
+// webpack.config.js (CommonJS)
+const MacNotifierPlugin = require('@svoirin/webpack-mac-notifier').default;
+
+module.exports = {
+  mode: 'development',
+  plugins: [
+    new MacNotifierPlugin({
+      title: 'My Project',
+      successMessage: '✅ Build successful!',
+      warningMessage: '⚠️ Build completed with warnings.',
+      errorMessage: '❌ Build failed!',
+      sound: 'Ping', // macOS sounds: Basso, Frog, Submarine, etc.
+```
+
+### For ESM (webpack.config.mjs or .js with type: "module")
+
+```js
+// webpack.config.js (ESM)
+import { MacNotifierPlugin } from '@svoirin/webpack-mac-notifier';
 
 export default {
   mode: 'development',
