@@ -1,0 +1,44 @@
+{
+  "name": "@shanevoirin/webpack-mac-notifier",
+  "version": "1.0.0",
+  "description": "A Webpack plugin for macOS terminal notifications using terminal-notifier",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "module",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "mac",
+    "notifier",
+    "terminal-notifier",
+    "build",
+    "notification"
+  ],
+  "author": "Shane Voirin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "webpack": "^5 || ^4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/webpack": "^5.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanevoirin/webpack-mac-notifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shanevoirin/webpack-mac-notifier/issues"
+  },
+  "homepage": "https://github.com/shanevoirin/webpack-mac-notifier#readme",
+  "dependencies": {
+    "terminal-notifier": "^0.1.2"
+  }
+}
